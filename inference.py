@@ -123,28 +123,37 @@ async def run_episode(task_id: str) -> float:
             action      = SqlQueryDebuggerAction(fixed_query=fixed_query)
             obs         = env.step(action)
 
-            rewards.append(obs.reward or 0.0)
+            current_reward = obs.reward or 0.0
+            rewards.append(current_reward)
             steps_taken = step
 
             log_step(
                 step   = step,
                 action = fixed_query,
-                reward = obs.reward or 0.0,
+                reward = current_reward,
                 done   = obs.done,
                 error  = obs.error_message if obs.error_message else None,
             )
 
             if obs.done:
                 break
+        
+        # Calculate final metrics based on the episode results
+        if rewards:
+            # Score is the maximum reward reached (captures early solve bonuses)
+            score = max(rewards)
+            # success is true if any step reached the solution threshold
+            success = any(r >= 0.99 for r in rewards)
 
-        score   = min(max(sum(rewards) / MAX_STEPS, 0.0), 1.0)
-        success = score >= SUCCESS_THRESHOLD
-
+    except Exception as e:
+        print(f"[DEBUG] Episode failed with error: {e}", flush=True)
     finally:
+        # Mandatory: Always emit [END] log with correct formatting
+        final_score_clamped = min(max(score, 0.0), 1.0)
         log_end(
             success = success,
             steps   = steps_taken,
-            score   = score,
+            score   = final_score_clamped,
             rewards = rewards,
         )
 
