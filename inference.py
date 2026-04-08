@@ -164,4 +164,4 @@ async def main() -> None:
     print(f"[DEBUG] Average score across all tasks: {avg:.3f}", flush=True)
 
 if __name__ == "__main__":
-    asyncio.run(main())S
+    asyncio.run(main())

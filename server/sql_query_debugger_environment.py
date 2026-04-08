@@ -16,7 +16,7 @@ SCENARIOS = [
     {
         "id": "easy_1",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
+        "db_schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
         "setup": [
             "INSERT INTO employees VALUES (1,'Alice',75000,'Engineering');",
             "INSERT INTO employees VALUES (2,'Bob',50000,'Marketing');",
@@ -31,7 +31,7 @@ SCENARIOS = [
     {
         "id": "easy_2",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE products (id INTEGER, name TEXT, price REAL, stock INTEGER);",
+        "db_schema": "CREATE TABLE products (id INTEGER, name TEXT, price REAL, stock INTEGER);",
         "setup": [
             "INSERT INTO products VALUES (1,'Laptop',999.99,10);",
             "INSERT INTO products VALUES (2,'Mouse',29.99,50);",
@@ -46,7 +46,7 @@ SCENARIOS = [
     {
         "id": "easy_3",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE students (id INTEGER, name TEXT, grade INTEGER, subject TEXT);",
+        "db_schema": "CREATE TABLE students (id INTEGER, name TEXT, grade INTEGER, subject TEXT);",
         "setup": [
             "INSERT INTO students VALUES (1,'Dan',85,'Math');",
             "INSERT INTO students VALUES (2,'Eve',92,'Science');",
@@ -61,7 +61,7 @@ SCENARIOS = [
     {
         "id": "easy_4",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE orders (id INTEGER, customer TEXT, amount REAL, status TEXT);",
+        "db_schema": "CREATE TABLE orders (id INTEGER, customer TEXT, amount REAL, status TEXT);",
         "setup": [
             "INSERT INTO orders VALUES (1,'Alice',250.0,'shipped');",
             "INSERT INTO orders VALUES (2,'Bob',89.0,'pending');",
@@ -76,7 +76,7 @@ SCENARIOS = [
     {
         "id": "easy_5",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE inventory (id INTEGER, item TEXT, qty INTEGER, warehouse TEXT);",
+        "db_schema": "CREATE TABLE inventory (id INTEGER, item TEXT, qty INTEGER, warehouse TEXT);",
         "setup": [
             "INSERT INTO inventory VALUES (1,'Bolts',500,'A');",
             "INSERT INTO inventory VALUES (2,'Nuts',300,'B');",
@@ -91,7 +91,7 @@ SCENARIOS = [
     {
         "id": "easy_6",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE users (id INTEGER, username TEXT, age INTEGER, city TEXT);",
+        "db_schema": "CREATE TABLE users (id INTEGER, username TEXT, age INTEGER, city TEXT);",
         "setup": [
             "INSERT INTO users VALUES (1,'alice',28,'Delhi');",
             "INSERT INTO users VALUES (2,'bob',35,'Mumbai');",
@@ -106,7 +106,7 @@ SCENARIOS = [
     {
         "id": "easy_7",
         "task_id": "syntax_fix",
-        "schema": "CREATE TABLE sales (id INTEGER, rep TEXT, amount REAL, region TEXT);",
+        "db_schema": "CREATE TABLE sales (id INTEGER, rep TEXT, amount REAL, region TEXT);",
         "setup": [
             "INSERT INTO sales VALUES (1,'Tom',15000,'North');",
             "INSERT INTO sales VALUES (2,'Sue',22000,'South');",
@@ -123,7 +123,7 @@ SCENARIOS = [
     {
         "id": "medium_1",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
+        "db_schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
         "setup": [
             "INSERT INTO employees VALUES (1,'Alice',75000,'Engineering');",
             "INSERT INTO employees VALUES (2,'Bob',50000,'Marketing');",
@@ -139,7 +139,7 @@ SCENARIOS = [
     {
         "id": "medium_2",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE orders (id INTEGER, customer TEXT, amount REAL, status TEXT);",
+        "db_schema": "CREATE TABLE orders (id INTEGER, customer TEXT, amount REAL, status TEXT);",
         "setup": [
             "INSERT INTO orders VALUES (1,'Alice',250.0,'shipped');",
             "INSERT INTO orders VALUES (2,'Bob',89.0,'pending');",
@@ -155,7 +155,7 @@ SCENARIOS = [
     {
         "id": "medium_3",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE products (id INTEGER, name TEXT, price REAL, category TEXT);",
+        "db_schema": "CREATE TABLE products (id INTEGER, name TEXT, price REAL, category TEXT);",
         "setup": [
             "INSERT INTO products VALUES (1,'Laptop',999.99,'Electronics');",
             "INSERT INTO products VALUES (2,'Shirt',29.99,'Clothing');",
@@ -171,7 +171,7 @@ SCENARIOS = [
     {
         "id": "medium_4",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE students (id INTEGER, name TEXT, score INTEGER, passed INTEGER);",
+        "db_schema": "CREATE TABLE students (id INTEGER, name TEXT, score INTEGER, passed INTEGER);",
         "setup": [
             "INSERT INTO students VALUES (1,'Alice',85,1);",
             "INSERT INTO students VALUES (2,'Bob',45,0);",
@@ -187,7 +187,7 @@ SCENARIOS = [
     {
         "id": "medium_5",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
+        "db_schema": "CREATE TABLE employees (id INTEGER, name TEXT, salary REAL, dept TEXT);",
         "setup": [
             "INSERT INTO employees VALUES (1,'Alice',75000,'Engineering');",
             "INSERT INTO employees VALUES (2,'Bob',50000,'Marketing');",
@@ -202,7 +202,7 @@ SCENARIOS = [
     {
         "id": "medium_6",
         "task_id": "logic_bug",
-        "schema": "CREATE TABLE sales (id INTEGER, rep TEXT, amount REAL, month INTEGER);",
+        "db_schema": "CREATE TABLE sales (id INTEGER, rep TEXT, amount REAL, month INTEGER);",
         "setup": [
             "INSERT INTO sales VALUES (1,'Tom',15000,1);",
             "INSERT INTO sales VALUES (2,'Sue',22000,1);",
@@ -220,7 +220,7 @@ SCENARIOS = [
     {
         "id": "hard_1",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE employees (id INTEGER, name TEXT, dept_id INTEGER, salary REAL);"
             "CREATE TABLE departments (id INTEGER, dept_name TEXT, budget REAL);"
         ),
@@ -240,7 +240,7 @@ SCENARIOS = [
     {
         "id": "hard_2",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE orders (id INTEGER, customer_id INTEGER, amount REAL);"
             "CREATE TABLE customers (id INTEGER, name TEXT, city TEXT);"
         ),
@@ -260,7 +260,7 @@ SCENARIOS = [
     {
         "id": "hard_3",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE employees (id INTEGER, name TEXT, dept_id INTEGER, salary REAL);"
             "CREATE TABLE departments (id INTEGER, dept_name TEXT, budget REAL);"
         ),
@@ -281,7 +281,7 @@ SCENARIOS = [
     {
         "id": "hard_4",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE products (id INTEGER, name TEXT, category_id INTEGER, price REAL);"
             "CREATE TABLE categories (id INTEGER, cat_name TEXT);"
             "CREATE TABLE order_items (id INTEGER, product_id INTEGER, qty INTEGER);"
@@ -305,7 +305,7 @@ SCENARIOS = [
     {
         "id": "hard_5",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE employees (id INTEGER, name TEXT, manager_id INTEGER, salary REAL);"
         ),
         "setup": [
@@ -323,7 +323,7 @@ SCENARIOS = [
     {
         "id": "hard_6",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE orders (id INTEGER, customer_id INTEGER, amount REAL, status TEXT);"
             "CREATE TABLE customers (id INTEGER, name TEXT, tier TEXT);"
         ),
@@ -345,7 +345,7 @@ SCENARIOS = [
     {
         "id": "hard_7",
         "task_id": "multi_table",
-        "schema": (
+        "db_schema": (
             "CREATE TABLE employees (id INTEGER, name TEXT, dept_id INTEGER, salary REAL);"
             "CREATE TABLE departments (id INTEGER, dept_name TEXT, budget REAL);"
         ),
@@ -389,11 +389,11 @@ def compute_f1(predicted_rows, expected_rows):
     return 2 * precision * recall / (precision + recall)
 
 
-def run_query_safe(schema, setup_stmts, query):
+def run_query_safe(db_schema, setup_stmts, query):
     try:
         conn = sqlite3.connect(":memory:")
         cur  = conn.cursor()
-        for stmt in schema.split(";"):
+        for stmt in db_schema.split(";"):
             stmt = stmt.strip()
             if stmt:
                 cur.execute(stmt)
@@ -430,15 +430,15 @@ class SqlQueryDebuggerEnvironment(Environment):
         _CURRENT_SCENARIO = random.choice(pool)
 
         sample_rows, _ = run_query_safe(
-            _CURRENT_SCENARIO["schema"],
+            _CURRENT_SCENARIO["db_schema"],
             _CURRENT_SCENARIO["setup"],
-            "SELECT * FROM " + _CURRENT_SCENARIO["schema"]
+            "SELECT * FROM " + _CURRENT_SCENARIO["db_schema"]
                 .split("CREATE TABLE ")[1].split(" ")[0] + " LIMIT 3;"
         )
 
         return SqlQueryDebuggerObservation(
             broken_query         = _CURRENT_SCENARIO["broken_query"],
-            schema               = _CURRENT_SCENARIO["schema"],
+            db_schema               = _CURRENT_SCENARIO["db_schema"],
             error_message        = _CURRENT_SCENARIO["error_message"],
             sample_rows          = json.dumps(sample_rows),
             expected_output_hint = _CURRENT_SCENARIO["expected_output_hint"],
@@ -456,7 +456,7 @@ class SqlQueryDebuggerEnvironment(Environment):
         attempts_left = self.MAX_STEPS - _CURRENT_STEP
 
         rows, error = run_query_safe(
-            _CURRENT_SCENARIO["schema"],
+            _CURRENT_SCENARIO["db_schema"],
             _CURRENT_SCENARIO["setup"],
             action.fixed_query,
         )
@@ -468,7 +468,7 @@ class SqlQueryDebuggerEnvironment(Environment):
 
         return SqlQueryDebuggerObservation(
             broken_query         = _CURRENT_SCENARIO["broken_query"],
-            schema               = _CURRENT_SCENARIO["schema"],
+            db_schema               = _CURRENT_SCENARIO["db_schema"],
             error_message        = error,
             sample_rows          = json.dumps(_CURRENT_SCENARIO["setup"]),
             expected_output_hint = _CURRENT_SCENARIO["expected_output_hint"],
